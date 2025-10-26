@@ -3,9 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>タイトル</title>
+    <title>氏名 — キャリアプロフィール</title>
+    <style>
+        :root{
+            --accent:#0a74da;
+            --muted:#666;
+            --bg:#f7f9fc;
+            --card:#fff;
+            --max-width:980px;
+        }
+        html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Hiragino Kaku Gothic ProN',Meiryo,Arial;color:#222;background:var(--bg)}
+        .container{max-width:var(--max-width);margin:32px auto;padding:24px}
+        header{display:flex;gap:16px;align-items:center}
+        .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6ec1ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
+        h1{margin:0;font-size:24px}
+        p.lead{margin:6px 0;color:var(--muted)}
+        .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+        .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,0.05)}
+        .section-title{font-size:14px;color:var(--muted);margin-bottom:10px}
+        .skills{display:flex;flex-wrap:wrap;gap:10px}
+        .skill{background:#eef6ff;padding:6px 10px;border-radius:999px;font-size:13px;color:var(--accent)}
+        .timeline{display:flex;flex-direction:column;gap:12px}
+        .item{border-left:3px solid #e6eefc;padding:8px 12px;margin-left:8px}
+        .item h4{margin:0;font-size:15px}
+        .item span{font-size:13px;color:var(--muted)}
+        .projects{display:flex;flex-direction:column;gap:10px}
+        .project{padding:12px;border-radius:8px;background:#fbfdff;border:1px solid #eef6ff}
+        footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+        .meta{display:flex;flex-direction:column;gap:8px}
+        .meta a{color:var(--accent);text-decoration:none}
+        @media (max-width:880px){
+            .grid{grid-template-columns:1fr}
+            .avatar{width:78px;height:78px;font-size:22px}
+        }
+        /* print-friendly */
+        @media print{
+            body{background:white}
+            .container{box-shadow:none}
+        }
+    </style>
 </head>
 <body>
-    <h1>タイトル</h1>
+    <div class="container">
+        <header>
+            <div class="avatar">氏名</div>
+            <div>
+                <h1>氏名 <small style="color:var(--muted);font-weight:500"> — 職種 / 希望ポジション</small></h1>
+                <p class="lead">キャリアの要約（例: エンジニア歴10年、Webアプリ／チームリード／SaaS 開発など）。実績と強みを簡潔に書く。</p>
+                <div style="margin-top:8px" class="meta">
+                    <div>所在地: 都道府県 ・ 勤務形態: リモート可</div>
+                    <div>メール: <a href="mailto:you@example.com">you@example.com</a> ・ LinkedIn: <a href="#">リンク</a></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid">
+            <main>
+                <section class="card">
+                    <div class="section-title">経歴ハイライト</div>
+                    <div class="timeline">
+                        <div class="item">
+                            <h4>株式会社A — シニアエンジニア</h4>
+                            <span>2021/04 〜 現在</span>
+                            <p>・大規模SaaSのアーキテクチャ設計・チームリード。レスポンシブで高可用なサービスを運用。主要成果：X% のパフォーマンス改善、CI/CD 導入でデプロイ時間を短縮。</p>
+                        </div>
+                        <div class="item">
+                            <h4>株式会社B — フロントエンドエンジニア</h4>
+                            <span>2017/05 〜 2021/03</span>
+                            <p>・React/Vue を用いたSPA 開発。UI改善でユーザー継続率を向上させたなど。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="margin-top:16px">
+                    <div class="section-title">主なプロジェクト</div>
+                    <div class="projects">
+                        <div class="project">
+                            <strong>プロジェクト名A</strong> — サマリー（何をしたか、使用技術、成果）
+                            <div style="margin-top:6px;color:var(--muted)">技術: React, Node.js, PostgreSQL ・ 期間: 2022</div>
+                        </div>
+                        <div class="project">
+                            <strong>プロジェクト名B</strong> — サマリー
+                            <div style="margin-top:6px;color:var(--muted)">技術: Python, AWS ・ 期間: 2020</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="margin-top:16px">
+                    <div class="section-title">受賞・認定</div>
+                    <ul>
+                        <li>資格名（取得年）</li>
+                        <li>カンファレンス発表（年月）</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside>
+                <div class="card">
+                    <div class="section-title">スキル</div>
+                    <div class="skills">
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">TypeScript</div>
+                        <div class="skill">React</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">AWS</div>
+                        <div class="skill">CI/CD</div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:16px">
+                    <div class="section-title">要約（箇条書き）</div>
+                    <ul>
+                        <li>チームリード経験：5人〜10人規模</li>
+                        <li>フルスタック開発 / アーキテクチャ設計</li>
+                        <li>開発プロセス改善・自動化の実績</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-top:16px">
+                    <div class="section-title">お問い合わせ</div>
+                    <div>メール: <a href="mailto:you@example.com">you@example.com</a></div>
+                    <div style="margin-top:8px"><a href="resume.pdf" download>履歴書（PDF）をダウンロード</a></div>
+                    <div style="margin-top:8px"><a href="#" target="_blank">GitHub</a> ・ <a href="#" target="_blank">LinkedIn</a></div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            最終更新: 2025-10-26 ・ コピーライト © 氏名
+        </footer>
+    </div>
 </body>
 </html>
